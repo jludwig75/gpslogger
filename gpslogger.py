@@ -157,5 +157,5 @@ logger = GpsLogger(args.port, args.baud_rate, args.pps_pin, args.log_file, args.
 signal.signal(signal.SIGINT, sigint_handler)
 
 logger.start()
-time.sleep(10)
-logger.stop()
+while True:
+    time.sleep(0.01)
