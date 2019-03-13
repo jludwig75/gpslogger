@@ -70,7 +70,8 @@ class SerialPortListener(DebugClass):
                 time_received = wiringpi.micros()
                 bytes_received = len(line) + 1
                 bits_received = bytes_received * BITS_PER_BYTE
-                # This is at least how much time it took to reveive the string
+                # This is at least how much time it took to reveive the string.
+                # We know that the message must have been sent at the latest at this time.
                 us_to_receive = (bits_received * USEC_PER_SEC) / self.baud_rate
                 self.q.put('%s-%s: %s' % (str(time_received - us_to_receive), str(time_received), line))
             self.print_debug('Exiting serial port listener thread')
