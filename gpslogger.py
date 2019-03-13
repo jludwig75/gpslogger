@@ -10,9 +10,9 @@ import signal
 import sys
 
 
-BITS_PER_BYTE = 10
-MSEC_PER_SEC = 1000
-USEC_PER_SEC = MSEC_PER_SEC * 1000
+BITS_PER_BYTE = 10L
+MSEC_PER_SEC = 1000L
+USEC_PER_SEC = MSEC_PER_SEC * 1000L
 
 
 class DebugClass:
@@ -61,7 +61,6 @@ class SerialPortListener(DebugClass):
         self.port_name = port_name
         self.q = event_queue
         self.baud_rate = baud_rate
-        self.usec_per_bit = USEC_PER_SEC / (baud_rate / BITS_PER_BYTE)
         self.stop_thread = False
 
     def _run(self):
@@ -72,7 +71,7 @@ class SerialPortListener(DebugClass):
                 bytes_received = len(line) + 1
                 bits_received = bytes_received * BITS_PER_BYTE
                 # This is at least how much time it took to reveive the string
-                us_to_receive = bits_received * self.usec_per_bit
+                us_to_receive = (bits_received * USEC_PER_SEC) / self.baud_rate
                 self.q.put('%s-%s: %s' % (str(time_received - us_to_receive), str(time_received), line))
             self.print_debug('Exiting serial port listener thread')
     
@@ -93,7 +92,8 @@ class PpsPinListener(DebugClass):
         DebugClass.__init__(self, debug)
         self.pps_pin = pps_pin
         self.event_queue = event_queue
-        GPIO.setmode(GPIO.BCM)  
+        GPIO.setmode(GPIO.BCM)
+        self.print_debug('Setting pin %u to GPIO.IN with PUD_DOWN' % self.pps_pin)
         GPIO.setup(self.pps_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
     def _pps_callback(self, channel):
@@ -101,7 +101,8 @@ class PpsPinListener(DebugClass):
 
     def start(self):
         self.print_debug('Enabling PPS listener')
-        GPIO.add_event_detect(self.pps_pin, GPIO.RISING, callback=self._pps_callback, bouncetime=300)
+        self.print_debug('Waiting for rising egde on pin %u' % self.pps_pin)
+        GPIO.add_event_detect(self.pps_pin, GPIO.RISING, callback=self._pps_callback)
 
     def stop(self):
         self.print_debug('Disabling PPS listener')
