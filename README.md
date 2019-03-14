@@ -12,7 +12,7 @@ An NMEA log can be converted to a GPX file with gpsbabel with this command:
 
 gpsbabel -i nmea -f gps_nmea.log -x discard,hdop=10 -o gpx -F gps_track.gpx
 
-I implemented with a Raspberry Pi Zero W and a Adafruit Ultimate GPS Breakout (MTK3339 GPS). I'm not sure how well it will work with different hardware, but it likely will work fine.
+I implemented this with a Raspberry Pi Zero W and a Adafruit Ultimate GPS Breakout (MTK3339 GPS). I'm not sure how well it will work with different hardware, but it likely will work fine.
 
 Setup:
 1. Use raspi-config to disable the console on the serial port and enable the pins as a serial port
@@ -39,6 +39,6 @@ You can convert the NMEA log to a GPX file with this gpsbabel command:
 
 gpsbabel -i nmea -f gps_nmea.log -x discard,hdop=10 -o gpx -F gps_track.gpx
 
-the hdop=10 option filters out poor GPS data.
+The hdop=10 option filters out poor GPS data.
 
 TODO: Add script and instructions to setup as a service that starts at boot.
