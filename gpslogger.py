@@ -40,6 +40,7 @@ class GpsLogWritter(DebugClass):
                     if self.print_to_screen:
                         print msg
                     log_file.write(msg + '\n')
+                # TODO: This is a busy loop when the queue is empty! Add a sleep when empty
             self.print_debug('Exiting GPS log writer thread')
     
     def start(self):
