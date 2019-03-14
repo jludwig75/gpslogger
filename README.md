@@ -14,7 +14,7 @@ extract-nmea.py: Extracts and NMEA log file form a gpslogger log file.
 
 An NMEA log can be converted to a GPX file with gpsbabel with this command:
 
-gpsbabel -i nmea -f gps_nmea.log -x discard,hdop=10 -o gpx -F gps_track.gpx
+```gpsbabel -i nmea -f gps_nmea.log -x discard,hdop=10 -o gpx -F gps_track.gpx```
 
 I implemented this with a Raspberry Pi Zero W and a Adafruit Ultimate GPS Breakout (MTK3339 GPS). I'm not sure how well it will work with different hardware, but it likely will work fine.
 
