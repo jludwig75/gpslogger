@@ -29,6 +29,8 @@ Setup:
 <a href="url"><img src="https://github.com/jludwig75/gpslogger/blob/master/20190314_124840.jpg" align="left" height="348" width="256" ></a>
 <a href="url"><img src="https://github.com/jludwig75/gpslogger/blob/master/20190314_124631.jpg" align="left" height="198" width="264" ></a>
 
+<br/>
+
 The log file has milisecond time stamps with PPS pules traces. To extract an NMEA log, run:
 
 ./extract-nmea.py -g gps_nmea_pps.log -n gps_nmea.log
