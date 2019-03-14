@@ -38,11 +38,11 @@ Setup:
 
 
 To install the gpslogger service:
-1. Copy gpslogger to /etc/init.d: sudo cp gpslogger /etc/init.d
-2. Make sure the service script is executable: sudo chmod 755 /etc/init.d/gpslogger
-3. Make sure the python script is executable: sudo chmod 755 gpslogger.py
+1. Copy gpslogger to /etc/init.d: ```sudo cp gpslogger /etc/init.d```
+2. Make sure the service script is executable: ```sudo chmod 755 /etc/init.d/gpslogger```
+3. Make sure the python script is executable: ```sudo chmod 755 gpslogger.py```
 4. Create a /home/pi/log director to capture the logs.
-4. Run 'sudo update-rc.d gpslogger defaults' to setup the service.
+4. Run ```sudo update-rc.d gpslogger defaults``` to setup the service.
 
 The gpslogger service will start at boot. To manually start/stop the service:
 
@@ -51,11 +51,11 @@ sudo /etc/init.d/gpslogger stop
 
 The log file has milisecond time stamps with PPS pules traces. To extract an NMEA log, run:
 
-./extract-nmea.py -g gps_nmea_pps.log -n gps_nmea.log
+```./extract-nmea.py -g gps_nmea_pps.log -n gps_nmea.log```
 
 You can convert the NMEA log to a GPX file with this gpsbabel command:
 
-gpsbabel -i nmea -f gps_nmea.log -x discard,hdop=10 -o gpx -F gps_track.gpx
+```gpsbabel -i nmea -f gps_nmea.log -x discard,hdop=10 -o gpx -F gps_track.gpx```
 
 The hdop=10 option filters out poor GPS data.
 
