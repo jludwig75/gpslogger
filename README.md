@@ -27,9 +27,7 @@ Setup:
 10. Press ctrl-c to stop trace collection
 
 <a href="url"><img src="https://github.com/jludwig75/gpslogger/blob/master/20190314_124840.jpg" align="left" height="348" width="256" ></a>
-
-![alt text](https://github.com/jludwig75/gpslogger/blob/master/20190314_124840.jpg)
-![alt text](https://github.com/jludwig75/gpslogger/blob/master/20190314_124631.jpg)
+<a href="url"><img src="https://github.com/jludwig75/gpslogger/blob/master/20190314_124631.jpg" align="left" height="198" width="264" ></a>
 
 The log file has milisecond time stamps with PPS pules traces. To extract an NMEA log, run:
 
