@@ -4,6 +4,7 @@ Raspberry Pi GPS Device Logger
 
 <a href="url"><img src="https://github.com/jludwig75/gpslogger/blob/master/20190314_124921.jpg" align="left" height="300" width="566" ></a>
 
+---
 
 &nbsp;<br/>
 
