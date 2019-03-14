@@ -26,6 +26,9 @@ Setup:
 9. Run ./gpslogger.py to collect trace data
 10. Press ctrl-c to stop trace collection
 
+![alt text](https://github.com/jludwig75/gpslogger/blob/master/20190314_124840.jpg)
+![alt text](https://github.com/jludwig75/gpslogger/blob/master/20190314_124631.jpg)
+
 The log file has milisecond time stamps with PPS pules traces. To extract an NMEA log, run:
 
 ./extract-nmea.py -g gps_nmea_pps.log -n gps_nmea.log
