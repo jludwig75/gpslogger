@@ -2,7 +2,7 @@
 
 Raspberry Pi GPS Device Logger
 
-![alt text](https://github.com/jludwig75/gpslogger/blob/master/20190314_124921.jpg)
+<a href="url"><img src="https://github.com/jludwig75/gpslogger/blob/master/20190314_124921.jpg" align="left" height="800" width="1510" ></a>
 
 gpslogger.py: Captures serial output and PPS interrupts and writes the output to a log file with microsecond timing
 
