@@ -14,14 +14,15 @@ I implemented this to work with a Raspberry Pi Zero W.
 
 Setup:
 1. Use raspi-config to disable the console on the serial port and enable the pins as a serial port
-2. Connect GPS TX to Pi RX
-3. Connect GPS RX to Pi TX
-4. Connect GPS VIN to 3.3V
-5. Connect GPS ground to Pi ground
-6. Connect GPS PPS pin to Pi pin 17
-7. clone sketch to Pi in /home/pi
-8. Run ./gpslogger.py to collect trace data
-9. Press ctrl-c to stop trace collection
+2. Shutdown Pi
+3. Connect GPS TX to Pi RX
+4. Connect GPS RX to Pi TX
+5. Connect GPS VIN to 3.3V
+6. Connect GPS ground to Pi ground
+7. Connect GPS PPS pin to Pi pin 17
+8. clone sketch to Pi in /home/pi
+9. Run ./gpslogger.py to collect trace data
+10. Press ctrl-c to stop trace collection
 
 The log file has milisecond time stamps with PPS pules traces. To extract an NMEA log, run:
 
