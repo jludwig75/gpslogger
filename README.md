@@ -2,6 +2,8 @@
 
 Raspberry Pi GPS Device Logger
 
+![alt text](https://github.com/jludwig75/gpslogger/blob/master/20190314_124921.jpg)
+
 gpslogger.py: Captures serial output and PPS interrupts and writes the output to a log file with microsecond timing
 
 extract-nmea.py: Extracts and NMEA log file form a gpslogger log file.
