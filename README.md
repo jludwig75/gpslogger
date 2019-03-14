@@ -2,7 +2,10 @@
 
 Raspberry Pi GPS Device Logger
 
-<a href="url"><img src="https://github.com/jludwig75/gpslogger/blob/master/20190314_124921.jpg" align="left" height="300" width="566" ></a>&nbsp;
+<a href="url"><img src="https://github.com/jludwig75/gpslogger/blob/master/20190314_124921.jpg" align="left" height="300" width="566" ></a>
+
+
+&nbsp;<br/>
 
 
 gpslogger.py: Captures serial output and PPS interrupts and writes the output to a log file with microsecond timing
@@ -30,7 +33,21 @@ Setup:
 <a href="url"><img src="https://github.com/jludwig75/gpslogger/blob/master/20190314_124840.jpg" align="left" height="348" width="256" ></a>
 <a href="url"><img src="https://github.com/jludwig75/gpslogger/blob/master/20190314_124631.jpg" align="left" height="198" width="264" ></a>
 
-<br/>
+
+&nbsp;<br/>
+
+
+To install the gpslogger service:
+1. Copy gpslogger to /etc/init.d: sudo cp gpslogger /etc/init.d
+2. Make sure the service script is executable: sudo chmod 755 /etc/init.d/gpslogger
+3. Make sure the python script is executable: sudo chmod 755 gpslogger.py
+4. Create a /home/pi/log director to capture the logs.
+4. Run 'sudo update-rc.d gpslogger defaults' to setup the service.
+
+The gpslogger service will start at boot. To manually start/stop the service:
+
+sudo /etc/init.d/gpslogger start
+sudo /etc/init.d/gpslogger stop
 
 The log file has milisecond time stamps with PPS pules traces. To extract an NMEA log, run:
 
