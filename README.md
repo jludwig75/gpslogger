@@ -7,7 +7,7 @@ Raspberry Pi GPS Device Logger
 
 &nbsp;<br/>
 
-
+<p>
 gpslogger.py: Captures serial output and PPS interrupts and writes the output to a log file with microsecond timing
 
 extract-nmea.py: Extracts and NMEA log file form a gpslogger log file.
@@ -29,6 +29,7 @@ Setup:
 8. clone sketch to Pi in /home/pi
 9. Run ./gpslogger.py to collect trace data
 10. Press ctrl-c to stop trace collection
+</p>
 
 <a href="url"><img src="https://github.com/jludwig75/gpslogger/blob/master/20190314_124840.jpg" align="left" height="348" width="256" ></a>
 <a href="url"><img src="https://github.com/jludwig75/gpslogger/blob/master/20190314_124631.jpg" align="left" height="198" width="264" ></a>
