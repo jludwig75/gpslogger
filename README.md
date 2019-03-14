@@ -26,6 +26,8 @@ Setup:
 9. Run ./gpslogger.py to collect trace data
 10. Press ctrl-c to stop trace collection
 
+<a href="url"><img src="https://github.com/jludwig75/gpslogger/blob/master/20190314_124840.jpg" align="left" height="100" width="100" ></a>
+
 ![alt text](https://github.com/jludwig75/gpslogger/blob/master/20190314_124840.jpg)
 ![alt text](https://github.com/jludwig75/gpslogger/blob/master/20190314_124631.jpg)
 
